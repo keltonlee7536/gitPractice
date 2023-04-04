@@ -1,0 +1,94 @@
+Think of git like sending a package;
+
+First, add contents. //git add .
+Next, tape the box. //git commit -m "message"
+
+or, speedrun adding contents and taping by doing //git -a -m "message" the -a flag will add everything.
+
+Last, take it to a carrier. //git push
+
+
+
+Untracked files have a ?? Next to them
+
+.gitignore will tell git to ignore certain files.
+
+Blank lines or ones starting with # are ignored;
+
+You can use two asterisks to ignore a directory a/**/z would ignore anything between an and z directories.
+
+Ignore .js files: .js
+
+
+
+git status shows file status; umchanged,changed,staged,commit.
+git diff shows exact lines added and removed only of uncommited files.
+
+
+
+
+you can add --staged to git diff (git diff --staged) to see staged files. --staged and --cached are synonyms.
+
+when you exit the editor, git creates your commit -the comments -the diff
+
+using git commit -a -m "message"
+will skip the staging area and add all tracked files. pretty much just skips git add .
+
+
+git rm command will remove the file from yourvtracked files/staging area, but also your working directory so you won't see it as an untracked file. when you run this command, the file will show up under "Changes not staged for commit" or unstaged area of your commit.
+
+
+
+
+
+
+
+git log shows comit info(commit, author, date, message) most recent to oldest.
+
+-p === Show the patch introduced with each commit.
+--stat === Show statistics for files modified in each commit.
+--shortstat === Display only the changed/insertions/deletions line from the --stat command.
+--name-only === Show the list of files modified after the commit information.
+--name-status === Show the list of files affected with added/modified/deleted information as well.
+--abbrev-commit === Show only the first few characters of the SHA-1 checksum instead of all 40.
+--relative-date === Display the date in a relative format (for example, “2 weeks ago”) instead of using the full date format.
+--graph === Display an ASCII graph of the branch and merge history beside the log output.
+--pretty === Show commits in an alternate format. Option values include oneline, short, full, fuller, and format (where you specify your own format).
+--oneline === Shorthand for --pretty=oneline --abbrev-commit used together.
+
+git log --pretty=format:"" will let you specify a format for your log.
+Specifiers for --pretty=format:"(specifiers)"
+
+%H  ===  Commit hash
+%h  ===  Abbreviated commit hash
+%T  ===  Tree hash
+%t  ===  Abbreviated tree hash
+%P  ===  Parent hashes
+%p  ===  Abbreviated parent hashes
+%an ===  Author name
+%ae ===  Author email
+%ad ===  Author date (format respects the --date=option)
+%ar ===  Author date, relative
+%cn ===  Committer name
+%ce ===  Committer email
+%cd ===  Committer date
+%cr ===  Committer date, relative
+%s  ===  Subject
+
+git log Options:
+
+-<n> === Show only the last n commits
+--since, --after === Limit the commits to those made after the specified date.
+--until, --before === Limit the commits to those made before the specified date.
+--author === Only show commits in which the author entry matches the specified string.
+--committer === Only show commits in which the committer entry matches the specified string.
+--grep === Only show commits with a commit message containing the string
+-S === Only show commits adding or removing code matching the string
+
+
+
+
+
+
+
+git commit --amend === if you commit too early, you can add more files and redo the commit.

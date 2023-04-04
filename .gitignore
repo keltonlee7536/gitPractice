@@ -1,0 +1,9 @@
+#this line is a comment.
+
+#ignore all .js files.
+# * means all.
+*.js
+
+
+#track script.js, even though you're ignoring all .js files.
+!script.js
